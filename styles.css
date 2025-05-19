@@ -1,0 +1,517 @@
+/* Основные стили и цветовая схема */
+:root {
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff00ff;
+  --neon-purple: #9d00ff;
+  --neon-red: #ff003c;
+  --dark-bg: #0a0a12;
+  --darker-bg: #05050a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Rajdhani', 'Courier New', monospace;
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Типография */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+/* Хедер */
+.cyber-header {
+  position: relative;
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(10, 10, 30, 0.7), rgba(5, 5, 15, 0.9)),
+    url('your-header-image.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--neon-purple);
+}
+
+.header-overlay {
+  text-align: center;
+  padding: 2rem;
+  border: 2px solid var(--neon-blue);
+  box-shadow: 
+    0 0 15px var(--neon-blue), 
+    inset 0 0 15px var(--neon-blue);
+  background-color: rgba(10, 10, 30, 0.5);
+  max-width: 90%;
+}
+
+.neon-text {
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 
+    0 0 10px var(--neon-blue), 
+    0 0 20px var(--neon-blue), 
+    0 0 30px var(--neon-blue);
+  margin: 0;
+  letter-spacing: 8px;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.header-subtitle {
+  color: var(--neon-pink);
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  margin-top: 1rem;
+  text-shadow: 0 0 5px var(--neon-pink);
+}
+
+/* Навигация */
+.cyber-nav {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  background-color: var(--darker-bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--neon-purple);
+}
+
+.neon-button {
+  background: transparent;
+  border: 2px solid var(--neon-pink);
+  color: var(--neon-pink);
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 
+    0 0 10px var(--neon-pink), 
+    inset 0 0 5px var(--neon-pink);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+}
+
+.neon-button:hover {
+  background: rgba(255, 0, 255, 0.1);
+  box-shadow: 
+    0 0 20px var(--neon-pink), 
+    inset 0 0 10px var(--neon-pink);
+  transform: translateY(-2px);
+}
+
+/* Основной контент */
+.cyber-main {
+  background: 
+    linear-gradient(rgba(10, 10, 30, 0.9), rgba(5, 5, 15, 0.95)),
+    url('your-bg-pattern.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.game-section {
+  padding: 5rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Секция с информацией об игре */
+.game-info {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.neon-text-accent {
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 
+    0 0 10px var(--neon-pink), 
+    0 0 20px var(--neon-pink);
+  margin-bottom: 2rem;
+  letter-spacing: 5px;
+  position: relative;
+  display: inline-block;
+}
+
+.neon-text-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.cyber-text {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Механики игры */
+.game-mechanics {
+  margin: 4rem auto;
+}
+
+.neon-text-small {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 5px var(--neon-blue);
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.mechanics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.mechanic-card {
+  background: rgba(20, 20, 40, 0.7);
+  border: 1px solid var(--neon-purple);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(157, 0, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.mechanic-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 0 25px var(--neon-purple),
+    0 10px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--neon-blue);
+}
+
+.mechanic-icon {
+  font-size: 2.5rem;
+  color: var(--neon-pink);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px var(--neon-pink);
+  transition: all 0.3s;
+}
+
+.mechanic-card:hover .mechanic-icon {
+  transform: scale(1.2);
+  color: var(--neon-blue);
+  text-shadow: 0 0 15px var(--neon-blue);
+}
+
+.mechanic-card h4 {
+  color: var(--neon-blue);
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.mechanic-card p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* Галерея скриншотов */
+.screenshots {
+  margin: 6rem auto 4rem;
+}
+
+.slider-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1000px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 
+    0 0 20px rgba(0, 243, 255, 0.2),
+    0 0 40px rgba(0, 243, 255, 0.1);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 500px;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darker-bg);
+}
+
+.slide-img {
+  max-width: 95%;
+  max-height: 95%;
+  border: 2px solid var(--neon-purple);
+  box-shadow: 0 0 20px var(--neon-purple);
+  cursor: pointer;
+  transition: transform 0.3s;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.slide-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px var(--neon-pink);
+  border-color: var(--neon-pink);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: var(--neon-blue);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  z-index: 10;
+  border-radius: 50%;
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+.slider-btn:hover {
+  background: rgba(0, 243, 255, 0.2);
+  color: var(--neon-pink);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Футер */
+.cyber-footer {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background-color: var(--darker-bg);
+  border-top: 1px solid var(--neon-purple);
+}
+
+.cyber-text-small {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  color: var(--neon-pink);
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  color: var(--neon-blue);
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  overflow: auto;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid var(--neon-pink);
+  box-shadow: 
+    0 0 30px var(--neon-pink),
+    0 0 60px var(--neon-purple);
+  animation: pulseBorder 2s infinite;
+}
+
+.close-modal {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: var(--neon-pink);
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-shadow: 0 0 10px var(--neon-pink);
+}
+
+.close-modal:hover {
+  color: var(--neon-blue);
+  transform: rotate(90deg);
+  text-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* Анимации */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 
+      0 0 10px var(--neon-blue), 
+      0 0 20px var(--neon-blue), 
+      0 0 30px var(--neon-blue);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 
+      0 0 30px var(--neon-pink),
+      0 0 60px var(--neon-purple);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px var(--neon-pink),
+      0 0 80px var(--neon-purple);
+  }
+  100% {
+    box-shadow: 
+      0 0 30px var(--neon-pink),
+      0 0 60px var(--neon-purple);
+  }
+}
+
+/* Плавное появление */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 
+    opacity 0.8s ease-out, 
+    transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .neon-text {
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+  }
+  
+  .neon-text-accent {
+    font-size: 2.5rem;
+  }
+  
+  .slider {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .neon-text {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+  
+  .header-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .neon-text-accent {
+    font-size: 2rem;
+  }
+  
+  .neon-text-small {
+    font-size: 1.8rem;
+  }
+  
+  .slider {
+    height: 300px;
+  }
+  
+  .mechanics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .close-modal {
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-text {
+    font-size: 2rem;
+  }
+  
+  .header-overlay {
+    padding: 1.5rem;
+  }
+  
+  .neon-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .slider {
+    height: 250px;
+  }
+  
+  .slider-btn {
+    font-size: 1.5rem;
+    padding: 0.8rem 1rem;
+  }
+}

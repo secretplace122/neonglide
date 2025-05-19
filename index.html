@@ -3,47 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт разработчика | Название вашего приложения</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
-        h1 {
-            color: #0066cc;
-        }
-        .app-info {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+    <title>SECRET PLACE | NEON GLIDE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>Добро пожаловать на сайт разработчика</h1>
-    
-    <div class="app-info">
-        <h2>NEON GLIDE</h2>
-        <p>Версия: 1.0.0</p>
-        <p>Описание: ...</p>
+    <header class="cyber-header">
+        <div class="header-overlay">
+            <h1 class="neon-text">SECRET PLACE GAMES</h1>
+            <p class="header-subtitle">Presents</p>
+        </div>
+    </header>
 
+    <nav class="cyber-nav">
+        <button id="gameLink" class="neon-button">NEON GLIDE</button>
+    </nav>
+
+    <main class="cyber-main">
+        <section id="neonGlide" class="game-section">
+            <div class="game-info fade-in">
+                <h2 class="neon-text-accent">NEON GLIDE</h2>
+                <p class="cyber-text">Погрузитесь в захватывающую историю о девушке и её семье, покидающих умирающую планету Обсидию. Многие остаются позади, не имея возможности улететь...</p>
+                <p class="cyber-text">Ваш путь к спасению лежит через неоновые лабиринты и цифровые барьеры.</p>
+            </div>
+
+            <div class="game-mechanics fade-in">
+                <h3 class="neon-text-small">МЕХАНИКА ИГРЫ</h3>
+                <div class="mechanics-grid">
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon"><i class="fas fa-hand-pointer"></i></div>
+                        <h4>Тактильное управление</h4>
+                        <p>Водите пальцем по экрану, уничтожая тайлы</p>
+                    </div>
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon"><i class="fas fa-puzzle-piece"></i></div>
+                        <h4>Разнообразие тайлов</h4>
+                        <p>Обычные тайлы, ловушки и особые элементы</p>
+                    </div>
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon"><i class="fas fa-image"></i></div>
+                        <h4>Открываемые изображения</h4>
+                        <p>По мере прохождения открывается история</p>
+                    </div>
+                    <div class="mechanic-card">
+                        <div class="mechanic-icon"><i class="fas fa-robot"></i></div>
+                        <h4>Сложные уровни</h4>
+                        <p>Препятствия усложняются с каждым уровнем</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screenshots fade-in">
+                <h3 class="neon-text-small">ГАЛЕРЕЯ</h3>
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slide active">
+                            <img src="images/gallery(1).jpg" alt="Скриншот игры NEON GLIDE 1" class="slide-img">
+                        </div>
+                        <div class="slide">
+                            <img src="images/gallery(2).jpg" alt="Скриншот игры NEON GLIDE 2" class="slide-img">
+                        </div>
+                        <div class="slide">
+                            <img src="images/gallery(3).jpg" alt="Скриншот игры NEON GLIDE 3" class="slide-img">
+                        </div>
+                        <div class="slide">
+                            <img src="images/gallery(4).jpg" alt="Скриншот игры NEON GLIDE 4" class="slide-img">
+                        </div>
+                        <div class="slide">
+                            <img src="images/gallery(5).jpg" alt="Скриншот игры NEON GLIDE 5" class="slide-img">
+                        </div>
+                        <div class="slide">
+                            <img src="images/gallery(6).jpg" alt="Скриншот игры NEON GLIDE 6" class="slide-img">
+                        </div>
+                    </div>
+                    <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="cyber-footer">
+        <p class="cyber-text-small">© 2025 SECRET PLACE GAMES | Все права взломаны</p>
+        <div class="social-links">
+            <a href="https://t.me/neon_glide" class="social-link"><i class="fab fa-telegram"></i></a>
+        </div>
+    </footer>
+
+    <div class="modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
     </div>
 
-    <h3>Контакты</h3>
-    <p>Email: <a href="mailto:secretplace122.95@gmail.com">secretplace122.95@gmail.com</a></p>
-
-    <footer>
-        &copy; Когда нибудь сайт будет....
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
