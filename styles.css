@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
-/* Основные стили и цветовая схема */
+
 :root {
   --neon-blue: #00f3ff;
   --neon-pink: #ff00ff;
@@ -24,7 +24,6 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
 }
-
 
 h1, h2, h3, h4 {
   font-weight: 700;
@@ -144,7 +143,6 @@ p {
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 0 20px var(--neon-purple);
-  animation: pulse 2s infinite alternate;
 }
 
 .pulse-text {
@@ -153,6 +151,7 @@ p {
   color: white;
   text-shadow: 0 0 10px rgba(0,0,0,0.5);
   letter-spacing: 3px;
+  animation: none;
 }
 
 .platform-tag {
@@ -259,6 +258,66 @@ p {
   color: var(--neon-blue);
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
+}
+
+/* Секция загрузки */
+.download-section {
+  margin: 6rem auto 4rem;
+  text-align: center;
+}
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.store-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+  background: rgba(20, 20, 40, 0.7);
+}
+
+.store-button.google-play {
+  color: #00ff00;
+  border-color: #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.store-button.ru-store {
+  color: #0051ff;
+  border-color: #0051ff;
+  box-shadow: 0 0 10px rgba(0, 17, 255, 0.568);
+}
+
+.store-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 243, 255, 0.5);
+}
+
+.store-button i {
+  font-size: 1.5rem;
+}
+
+/* Секция истории */
+.story-section {
+  margin: 4rem auto 6rem;
+  text-align: center;
+}
+
+#storyButton {
+  cursor: pointer;
+  max-width: 250px;
+  margin: 0 auto;
 }
 
 /* Галерея скриншотов */
@@ -376,11 +435,11 @@ p {
   text-shadow: 0 0 10px var(--neon-blue);
 }
 
-/* Модальное окно */
+/* Модальные окна */
 .modal {
   display: none;
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -416,12 +475,108 @@ p {
   cursor: pointer;
   transition: all 0.3s;
   text-shadow: 0 0 10px var(--neon-pink);
+  z-index: 1001;
 }
 
 .close-modal:hover {
   color: var(--neon-blue);
   transform: rotate(90deg);
   text-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* Модальное окно истории */
+.modal-story-content {
+  position: relative;
+  background: var(--darker-bg);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  border: 2px solid var(--neon-blue);
+  box-shadow: 
+    0 0 20px var(--neon-blue),
+    inset 0 0 10px var(--neon-blue);
+  border-radius: 8px;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: pulseBorder 2s infinite;
+}
+
+.story-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.story-title::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 3px;
+  background: var(--neon-pink);
+  margin: 1rem auto 0;
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* Навигация по главам */
+.story-chapters-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.chapter-nav-btn {
+  background: rgba(0, 243, 255, 0.1);
+  border: 1px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+}
+
+.chapter-nav-btn:hover {
+  background: rgba(0, 243, 255, 0.2);
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.chapter-nav-btn.active {
+  background: var(--neon-blue);
+  color: var(--dark-bg);
+  font-weight: 700;
+}
+
+/* Контент глав */
+.story-content {
+  padding: 1rem;
+}
+
+.story-chapter {
+  display: none;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(10, 10, 30, 0.5);
+}
+
+.story-chapter.active {
+  display: block;
+}
+
+.story-chapter h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--neon-pink);
+}
+
+.story-chapter p {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  line-height: 1.7;
 }
 
 /* Анимации */
@@ -492,6 +647,10 @@ p {
   .slider {
     height: 400px;
   }
+  
+  .modal-story-content {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -524,6 +683,20 @@ p {
     top: 20px;
     right: 25px;
     font-size: 2.5rem;
+  }
+  
+  .story-chapters-nav {
+    gap: 0.5rem;
+  }
+  
+  .chapter-nav-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -560,4 +733,154 @@ p {
     margin-top: 0.5rem;
     justify-content: center;
   }
+  
+  .modal-story-content {
+    padding: 1rem;
+  }
+  
+  .story-title::after {
+    width: 150px;
+  }
+}
+  
+/* Стили для текста истории */
+.story-chapter {
+    padding: 2rem;
+    background: rgba(20, 20, 40, 0.5);
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    border: 1px solid var(--neon-purple);
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.2);
+}
+
+.story-paragraph {
+    margin-bottom: 1.8rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.story-paragraph::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    width: 6px;
+    height: 6px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--neon-blue);
+}
+
+.story-paragraph.highlight {
+    background: rgba(0, 243, 255, 0.1);
+    border-left: 3px solid var(--neon-blue);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 4px 4px 0;
+    animation: textGlow 3s infinite;
+}
+
+.story-paragraph.highlight::before {
+    display: none;
+}
+
+.story-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem 0;
+    position: relative;
+}
+
+.divider-line {
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--neon-blue), 
+        transparent);
+    flex-grow: 1;
+    max-width: 150px;
+    opacity: 0.7;
+}
+
+.divider-icon {
+    width: 8px;
+    height: 8px;
+    background: var(--neon-pink);
+    border-radius: 50%;
+    margin: 0 1.5rem;
+    box-shadow: 
+        0 0 5px var(--neon-pink),
+        0 0 10px var(--neon-pink);
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+/* Анимация для точки */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes textGlow {
+    0%, 100% { box-shadow: inset 0 0 10px rgba(0, 243, 255, 0.2); }
+    50% { box-shadow: inset 0 0 15px rgba(0, 243, 255, 0.4); }
+}
+
+/* Обновляем медиа-запросы, добавляя новые стили */
+@media (max-width: 992px) {
+    .story-chapter {
+        padding: 1.5rem;
+    }
+    
+    .story-paragraph {
+        font-size: 1rem;
+        padding-left: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .story-chapter {
+        padding: 1rem;
+    }
+    
+    .story-paragraph {
+        text-align: left;
+        padding-left: 1rem;
+    }
+    
+    .story-paragraph::before {
+        width: 4px;
+        height: 4px;
+        top: 0.6rem;
+    }
+    
+    .divider-line {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-paragraph {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    .divider-line {
+        max-width: 60px;
+    }
+    
+    .divider-icon {
+        margin: 0 1rem;
+    }
 }
